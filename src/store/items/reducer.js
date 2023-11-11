@@ -10,7 +10,6 @@ export const initialItems = [
 
 export const reducer = produce((state = initialItems, action) => {
 
-
   if (action.type === ITEM_ADDED) {
       const item = {uuid: id++, quantity: 1, ...action.payload };
       state.push(item);
@@ -25,7 +24,6 @@ export const reducer = produce((state = initialItems, action) => {
       item.price = parseInt(action.payload.price, 10);
 
     };
-
 
   if (action.type === ITEM_QUANTITY_UPDATED) {
       const item = state.find((item) => item.uuid === action.payload.uuid);
